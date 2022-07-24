@@ -1,0 +1,78 @@
+Project Name: Doom Day Clock
+
+IDEA: Assignment due date count down.
+
+Login page:
+
+Main page
+
+- Show list of subject due date and count down.
+
+** Use webhook to send the notification to eg. messenger, line official, discord bot, push over.
+
+Features:
+
+- Send list of works through notifications via apps and emails like messenger, discord, email
+- Set up assignment due date reminder 
+- Countdown clock for each assignment
+- Set recurring assignments
+
+====================================================
+#Database to do list
+
+#Table for user
+Username: <<== not null #use this for login
+User ID <-- PK
+Password: <<== not null
+Dlsplay name: <<== not null
+=====================================================
+
+#Table for the assignment
+User ID: <-- FK
+Assignment ID: <-- PK
+Course Name:
+Assignment Name:
+Description: optional
+Due date: (time)
+Fast Travel: (Hyper link)
+
+==========================================================
+
+#Table for notification line
+User ID: <-- FK
+Notification ID: <-- PK
+Line ID: <<== null //List
+
+==========================================================
+
+#Table for notification messenger
+User ID: <-- FK
+Notification ID: <-- PK
+Messenger ID: <<== null //List
+
+==========================================================
+
+
+#Table for notification mail
+User ID: <-- FK
+Notification ID: <-- PK
+E-mail: <<== not null //List
+
+==========================================================
+
+#Table for config
+Assignment ID: <-- FK
+Config ID:
+Use line: boolean
+Use messenger: boolean
+Use mail: boolean <== not null
+
+==========================================================
+
+Servlet use Spring
+
+
+Additional features:
+
+- Send other notifications upon request like a discord bot i.e. weather, covid cases, …
+- Send meme?
