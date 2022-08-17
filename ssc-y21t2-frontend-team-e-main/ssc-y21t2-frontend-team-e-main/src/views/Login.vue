@@ -3,8 +3,11 @@
 <!--  <div :style="myStyle" id="wrapper">-->
 
   <v-container>
+
     <nav >
+
       <v-app-bar app  >
+
         <router-link to="/assignment">
           <v-img :src="require('../assets/ddc.png')" aspect-ratio="1" width="55" height="55" contain></v-img>
         </router-link>
@@ -13,7 +16,16 @@
           <v-img :src="require('../assets/new.png')"   class="ml-2" aspect-ratio="1" width="250" height="40" contain></v-img>
         </router-link>
 
+
         <v-spacer></v-spacer>
+        <v-switch
+            class="mt-5"
+            v-model="switchTheme"
+            inset
+            color="blue ligthen-1"
+            @click="toggleTheme"
+            :label="`Theme: ${switchTheme ? 'Light' : 'Dark'}`"
+        ></v-switch>
         <v-btn text class="ml-2" to="/about">About</v-btn>
         <v-btn text class="ml-2" to="/register">Register</v-btn>
         <!--      <v-btn text class="ml-2">Profile</v-btn>-->
